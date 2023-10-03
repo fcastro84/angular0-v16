@@ -1,6 +1,13 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit, SimpleChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+/**
+ *
+ *
+ * @export
+ * @class DashboardChildComponent
+ * @implements {OnInit}
+ */
 @Component({
   selector: 'app-dashboard-child',
   standalone: true,
@@ -13,6 +20,12 @@ export class DashboardChildComponent implements OnInit{
 
   @Input() text: string = '';
 
+  /**
+   *
+   *
+   * @param {SimpleChanges} changes
+   * @memberof DashboardChildComponent
+   */
   ngOnChanges(changes: SimpleChanges): void {
     //Called before any other lifecycle hook. Use it to inject dependencies, but avoid any serious work here.
     //Add '${implements OnChanges}' to the class.
@@ -21,6 +34,11 @@ export class DashboardChildComponent implements OnInit{
     
   }
 
+  /**
+   *
+   *
+   * @memberof DashboardChildComponent
+   */
   ngOnInit(): void {
     console.log('inicializado dashboard-child');
   }
