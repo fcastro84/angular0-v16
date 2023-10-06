@@ -1,3 +1,5 @@
 <p>dashboard works!!!!</p>
-<button (click)="handleClick()">Click here </button>
-<app-dashboard-child [text]="text" />
+<button (click)="handleClickParent()">Canged text from parent </button>
+<h2>Parent: {{text}}</h2>
+<!-- <app-dashboard-child [text]="text" (textChange)="changedText($event)" /> -->
+<app-dashboard-child [(text)]="text"  />

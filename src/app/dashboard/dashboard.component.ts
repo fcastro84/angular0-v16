@@ -11,6 +11,7 @@ import { DashboardChildComponent } from './components/dashboard-child/dashboard-
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent {
+
   text = 'Dashboard';
   cd = inject(ChangeDetectorRef);
 
@@ -21,7 +22,13 @@ export class DashboardComponent {
     }, 5000);
   }
 
-  handleClick(){
+  handleClickParent(){
     this.text = 'dashboard text changed by click';
   }
+
+  changedText(textChild: any) {
+    console.log(textChild);
+    this.text = textChild;
+    }
+
 }

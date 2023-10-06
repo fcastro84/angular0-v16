@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit, SimpleChanges } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output, SimpleChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 /**
@@ -19,6 +19,7 @@ import { CommonModule } from '@angular/common';
 export class DashboardChildComponent implements OnInit{
 
   @Input() text: string = '';
+  @Output() textChange = new EventEmitter<string>();
 
   /**
    *
@@ -41,6 +42,11 @@ export class DashboardChildComponent implements OnInit{
    */
   ngOnInit(): void {
     console.log('inicializado dashboard-child');
+  }
+
+  handleClick(){
+    this.text = 'dashboard text changed by the child';
+    this.textChange.emit(this.text );
   }
 
 }
